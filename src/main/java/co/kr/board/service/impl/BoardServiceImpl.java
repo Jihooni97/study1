@@ -46,4 +46,12 @@ public class BoardServiceImpl implements BoardService{
 		testMapper.update(params);
 		
 	}
+
+	@Override
+	public void ajaxTest(String string) {
+		testMapper.ajaxTest(string);
+		
+	}
+
+
 }

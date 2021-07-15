@@ -8,7 +8,7 @@ import egovframework.rte.psl.dataaccess.mapper.Mapper;
 @Mapper("testMapper")
 public interface BoardMapper {
 
-	void insert(HashMap<String, Object> params);
+	public void insert(HashMap<String, Object> params);
 	
 	public List<HashMap<String, Object>> select();
 	
@@ -19,4 +19,6 @@ public interface BoardMapper {
 	public HashMap<String, Object> updatePage(int nb);
 	
 	public void update(HashMap<String, Object> params);
+
+	public void ajaxTest(String string);
 }

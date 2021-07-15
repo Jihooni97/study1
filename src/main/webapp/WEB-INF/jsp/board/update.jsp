@@ -10,7 +10,7 @@
 <table>
 	<tr>
 		<td>번호</td>
-		<td><input type="number" name="boardNb" value="${data.number}"></td>
+		<td><input type="number" name="boardNb" value="${data.number}" readonly></td>
 	</tr>
 	<tr>
 		<td>이름</td>

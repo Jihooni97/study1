@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,7 +49,7 @@ public class BoardController {
 	public String insert(@RequestParam HashMap<String, Object>params){
 		params.put("boardNb", Integer.parseInt((String)params.get("boardNb")));
 		testService.insert(params);
-		return "/board/insert";
+		return "redirect:/select.do";
 	}
 	
 	@RequestMapping(value="/select.do")
@@ -65,16 +66,20 @@ public class BoardController {
 		return "/board/detail";
 	}
 	
-//	@RequestMapping(value = "/detail.do")
-//	public String detail(@RequestParam HashMap<String, Object> params){
-//		
-//		return "/board/detail";
-//	}
-	
 	@RequestMapping(value="/delete.do")
 	public String delete(int nb){
 		testService.delete(nb);
 		return "redirect:/select.do";
 	}
 	
+	@RequestMapping(value="/delete1.do")
+	public String ajaxTest(HttpServletRequest request){
+		
+		String[] ajaxMsg = request.getParameterValues("valueArr");
+		int size = ajaxMsg.length;
+		for(int i=0; i<size; i++){
+			testService.ajaxTest(ajaxMsg[i]);
+		}
+		return "redirect:/select.do";
+	}
 }
