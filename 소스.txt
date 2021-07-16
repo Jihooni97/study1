@@ -1,0 +1,27 @@
+                        context-datasource   
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
+        <property name="driverClass" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/postgres" />
+        <property name="username" value="postgres"/>
+        <property name="password" value="0000"/>
+      </bean>
+
+
+
+                         maven repository
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>4.2.4.RELEASE</version>
+	</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.2.5</version>
+	</dependency>
